@@ -41,7 +41,7 @@ function App() {
   };
 
   return (
-    <Router basename='/portfolio'>
+    <Router>
       <div className="App">
         <Header />
         <main className="main-content">
@@ -52,9 +52,6 @@ function App() {
             <Route path="/education" element={<Education />} />
             <Route path="/certificates" element={<Certificates />} />
             <Route path="/resume" element={<Resume />} />
-            <Route path="/about" element={<Home />} />
-            <Route path="/projects" element={<Home />} />
-            <Route path="/contact" element={<Home />} />
           </Routes>
         </main>
         <Footer />
