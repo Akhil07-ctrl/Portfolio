@@ -1,0 +1,174 @@
+.resume-section {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.resume-content {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.resume-left {
+  flex: 1;
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.resume-right {
+  flex: 2;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.resume-section-item {
+  margin-bottom: 30px;
+}
+
+.resume-section-item h3 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.section-content {
+  margin-top: 10px;
+}
+
+.section-item {
+  margin-bottom: 15px;
+}
+
+.project-item {
+  margin-bottom: 20px;
+}
+
+.project-item h4 {
+  color: #6c5ce7;
+  margin-bottom: 10px;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.tech-tag {
+  padding: 5px 10px;
+  background: #f0f0f0;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background: linear-gradient(to right, #6c5ce7, #a366ff);
+  color: white;
+}
+
+.profile-section {
+  margin-bottom: 30px;
+}
+
+.profile-text {
+  color: #333;
+  line-height: 1.6;
+}
+
+.contact-section {
+  margin-top: 30px;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.contact-list li i {
+  color: #6c5ce7;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.resume-left {
+  animation: slideInLeft 0.6s ease forwards;
+}
+
+.resume-right {
+  animation: slideInRight 0.6s ease forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .resume-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .resume-left,
+  .resume-right {
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .resume-left,
+  .resume-right {
+    padding: 20px;
+  }
+
+  .resume-section-item h3 {
+    font-size: 1.2rem;
+  }
+
+  .contact-list li {
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-section-item h3 {
+    font-size: 1.1rem;
+  }
+
+  .profile-text,
+  .contact-list li {
+    font-size: 0.9rem;
+  }
+}
