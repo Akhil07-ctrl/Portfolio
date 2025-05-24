@@ -7,10 +7,45 @@ import './index.css';
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(
-    localStorage.getItem('darkMode') === 'true'
-  );
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    // Check localStorage first
+    const stored = localStorage.getItem('darkMode');
+    if (stored !== null) {
+      return stored === 'true';
+    }
+    // If no stored preference, check system preference
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  });
+  
   const location = useLocation();
+
+  // Initialize dark mode on mount
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }, []);
+
+  // Listen for system color scheme changes
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = (e) => {
+      // Only apply if user hasn't set a preference
+      if (localStorage.getItem('darkMode') === null) {
+        setIsDarkMode(e.matches);
+        if (e.matches) {
+          document.body.classList.add('dark-mode');
+        } else {
+          document.body.classList.remove('dark-mode');
+        }
+      }
+    };
+
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
