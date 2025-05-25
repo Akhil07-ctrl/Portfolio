@@ -4,56 +4,85 @@
 }
 
 .resume-content {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
   padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.resume-left {
-  grid-column: 1;
+.resume-main {
   background: var(--white);
-  padding: 30px;
   border-radius: 10px;
+  padding: 30px;
   box-shadow: var(--box-shadow);
   transition: transform 0.3s ease;
+  animation: slideInRight 0.6s ease forwards;
 }
 
-.resume-left:hover {
-  transform: translateY(-10px);
-}
-
-.resume-left h3 {
-  color: var(--text-color);
-  margin-bottom: 15px;
-  font-size: 1.5rem;
+.resume-main:hover {
+  transform: translateY(-5px);
 }
 
 .resume-section-item {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--gray-light);
+  padding-bottom: 30px;
 }
 
-.resume-section-item h3 {
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.section-header h3 {
   color: var(--text-color);
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.section-icon {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.section-text {
+  color: var(--text-secondary);
+  line-height: 1.6;
   margin-bottom: 15px;
-  font-size: 1.3rem;
 }
 
 .section-content {
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .section-item {
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
-.project-item {
-  margin-bottom: 20px;
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
 }
 
 .project-item h4 {
   color: var(--primary-color);
-  margin-bottom: 10px;
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+}
+
+.project-period {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.project-description {
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: 15px;
 }
 
 .tech-stack {
@@ -64,61 +93,20 @@
 }
 
 .tech-tag {
-  padding: 5px 10px;
-  background: var(--gray-light);
+  padding: 6px 12px;
+  background: rgba(108, 92, 231, 0.1);
   border-radius: 20px;
   font-size: 0.9rem;
-  color: var(--text-color);
+  color: var(--primary-color);
   transition: all 0.3s ease;
 }
 
 .tech-tag:hover {
-  background: linear-gradient(to right, #6c5ce7, #a366ff);
+  background: var(--primary-color);
   color: white;
 }
 
-.profile-section {
-  margin-bottom: 30px;
-}
-
-.profile-text {
-  color: #333;
-  line-height: 1.6;
-}
-
-.contact-section {
-  margin-top: 30px;
-}
-
-.contact-list {
-  list-style: none;
-  padding: 0;
-}
-
-.contact-list li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
-  color: #666;
-}
-
-.contact-list li i {
-  color: #6c5ce7;
-}
-
 /* Animations */
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
 @keyframes slideInRight {
   from {
     opacity: 0;
@@ -130,49 +118,40 @@
   }
 }
 
-.resume-left {
-  animation: slideInLeft 0.6s ease forwards;
-}
-
-.resume-right {
-  animation: slideInRight 0.6s ease forwards;
-}
-
 /* Responsive Design */
-@media (max-width: 1024px) {
-  .resume-content {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .resume-left,
-  .resume-right {
-    flex: 1;
-  }
-}
-
 @media (max-width: 768px) {
-  .resume-left,
-  .resume-right {
+  .resume-content {
+    padding: 15px;
+  }
+  
+  .resume-main {
     padding: 20px;
   }
-
-  .resume-section-item h3 {
-    font-size: 1.2rem;
+  
+  .resume-section-item {
+    margin-bottom: 30px;
+  }
+  
+  .section-header h3 {
+    font-size: 1.3rem;
+  }
+  
+  .section-icon {
+    font-size: 1.1rem;
+  }
+  
+  .project-item h4 {
+    font-size: 1.1rem;
+  }
+  
+  .project-period {
+    font-size: 0.85rem;
   }
 
-  .contact-list li {
-    margin-bottom: 8px;
-  }
 }
 
 @media (max-width: 480px) {
   .resume-section-item h3 {
     font-size: 1.1rem;
-  }
-
-  .profile-text,
-  .contact-list li {
-    font-size: 0.9rem;
   }
 }

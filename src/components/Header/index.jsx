@@ -19,14 +19,18 @@ const Header = () => {
   
   const location = useLocation();
 
-  // Initialize dark mode on mount
+  // Handle dark mode state changes
   useEffect(() => {
+    // Update body class based on dark mode state
     if (isDarkMode) {
       document.body.classList.add('dark-mode');
     } else {
       document.body.classList.remove('dark-mode');
     }
-  }, []);
+
+    // Store preference in localStorage
+    localStorage.setItem('darkMode', isDarkMode.toString());
+  }, [isDarkMode]);
 
   // Listen for system color scheme changes
   useEffect(() => {
@@ -35,11 +39,6 @@ const Header = () => {
       // Only apply if user hasn't set a preference
       if (localStorage.getItem('darkMode') === null) {
         setIsDarkMode(e.matches);
-        if (e.matches) {
-          document.body.classList.add('dark-mode');
-        } else {
-          document.body.classList.remove('dark-mode');
-        }
       }
     };
 

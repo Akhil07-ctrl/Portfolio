@@ -40,46 +40,40 @@ const Resume = () => {
       <div className="container">
         <h2 className="section-title">Resume</h2>
         <div className="resume-content">
-          <div className="resume-left">
-            <div className="profile-section">
-              <h3>Profile</h3>
-              <p className="profile-text">
-                Experienced developer with a strong background in full-stack development and cloud technologies. 
-                Proven ability to deliver high-quality software solutions and mentor junior developers.
-              </p>
-            </div>
-            <div className="contact-section">
-              <h3>Contact</h3>
-              <ul className="contact-list">
-                <li><i className="fas fa-envelope"></i> email@example.com</li>
-                <li><i className="fas fa-phone"></i> +1 234 567 890</li>
-                <li><i className="fab fa-linkedin"></i> linkedin.com/in/username</li>
-                <li><i className="fab fa-github"></i> github.com/username</li>
-              </ul>
-            </div>
-          </div>
-          <div className="resume-right">
+          <div className="resume-main">
             {resumeSections.map((section, index) => (
               <div key={index} className="resume-section-item">
-                <h3>{section.title}</h3>
+                <div className="section-header">
+                  <h3>{section.title}</h3>
+                  {section.icon && (
+                    <FontAwesomeIcon icon={section.icon} className="section-icon" />
+                  )}
+                </div>
                 {typeof section.content === 'string' ? (
-                  <p>{section.content}</p>
+                  <p className="section-text">{section.content}</p>
                 ) : (
                   <div className="section-content">
                     {section.content.map((item, i) => (
                       <div key={i} className="section-item">
                         {typeof item === 'object' ? (
                           <div className="project-item">
-                            <h4>{item.name}</h4>
-                            <p>{item.description}</p>
-                            <div className="tech-stack">
-                              {item.technologies.map((tech, t) => (
-                                <span key={t} className="tech-tag">{tech}</span>
-                              ))}
+                            <div className="project-header">
+                              <h4>{item.name}</h4>
+                              {item.period && (
+                                <span className="project-period">{item.period}</span>
+                              )}
                             </div>
+                            <p className="project-description">{item.description}</p>
+                            {item.technologies && (
+                              <div className="tech-stack">
+                                {item.technologies.map((tech, t) => (
+                                  <span key={t} className="tech-tag">{tech}</span>
+                                ))}
+                              </div>
+                            )}
                           </div>
                         ) : (
-                          <p>{item}</p>
+                          <p className="section-text">{item}</p>
                         )}
                       </div>
                     ))}
