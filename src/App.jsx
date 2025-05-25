@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -17,21 +17,7 @@ import './App.css';
 
 function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 300) {
-        setShowScrollTop(true);
-      } else {
-        setShowScrollTop(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  const [footerReached, setFooterReached] = useState(false);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -39,6 +25,28 @@ function App() {
       behavior: 'smooth'
     });
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const footer = document.querySelector('.footer');
+      if (footer) {
+        const footerTop = footer.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        // Show scroll-to-top when user reaches footer or scrolls more than 300px
+        if (footerTop <= windowHeight || window.scrollY > 300) {
+          setShowScrollTop(true);
+          setFooterReached(footerTop <= windowHeight);
+        } else {
+          setShowScrollTop(false);
+          setFooterReached(false);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <Router>
@@ -55,10 +63,10 @@ function App() {
           </Routes>
         </main>
         <Footer />
-        
+
         {showScrollTop && (
-          <button 
-            className="scroll-to-top" 
+          <button
+            className={`scroll-to-top ${footerReached ? 'footer-visible' : ''}`}
             onClick={scrollToTop}
             aria-label="Scroll to top"
           >

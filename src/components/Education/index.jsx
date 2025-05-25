@@ -1,13 +1,14 @@
-import React from 'react';
+import { FaCheckCircle } from "react-icons/fa"
+
 import './index.css';
 
 const Education = () => {
   const education = [
     {
-      degree: 'Master of Computer Science',
-      institution: 'Stanford University',
-      period: '2016 - 2018',
-      location: 'Stanford, CA',
+      degree: 'Master of Business Administration',
+      institution: "Bhavan's Vivekananda College",
+      period: '2021 - 2023',
+      location: 'Hyderabad, Telangana',
       description: 'Focused on advanced computer science topics including machine learning, data structures, and algorithms.',
       achievements: [
         'Graduated with distinction',
@@ -16,10 +17,34 @@ const Education = () => {
       ]
     },
     {
-      degree: 'Bachelor of Computer Science',
-      institution: 'University of California',
-      period: '2012 - 2016',
-      location: 'Berkeley, CA',
+      degree: 'Bachelor of Technology',
+      institution: 'Dr B R Ambedkar National Institute of Technology',
+      period: '2015 - 2019',
+      location: 'Jalandhar, Punjab',
+      description: 'Completed core computer science curriculum with emphasis on software engineering and web development.',
+      achievements: [
+        'Graduated with honors',
+        'Member of ACM',
+        'Won hackathon competition'
+      ]
+    },
+    {
+      degree: 'Intermediate',
+      institution: 'Sri Chaitanya Junior Kalasala',
+      period: '2013 - 2015',
+      location: 'Hyderabad, Telangana',
+      description: 'Completed core computer science curriculum with emphasis on software engineering and web development.',
+      achievements: [
+        'Graduated with honors',
+        'Member of ACM',
+        'Won hackathon competition'
+      ]
+    },
+    {
+      degree: 'SSC',
+      institution: 'Sri Chaitanya Techno School',
+      period: '2012 - 2013',
+      location: 'Hyderabad, Telangana',
       description: 'Completed core computer science curriculum with emphasis on software engineering and web development.',
       achievements: [
         'Graduated with honors',
@@ -50,8 +75,8 @@ const Education = () => {
                   <h4>Achievements</h4>
                   <ul>
                     {edu.achievements.map((achievement, i) => (
-                      <li key={i} className="achievement-item">
-                        <i className="fas fa-check-circle achievement-icon"></i>
+                      <li key={i}>
+                        <FaCheckCircle style={{ color: 'green', marginRight: '0.5rem' }} />
                         {achievement}
                       </li>
                     ))}

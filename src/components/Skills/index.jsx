@@ -1,4 +1,4 @@
-import React from 'react';
+
 import './index.css';
 
 const Skills = () => {
@@ -9,18 +9,38 @@ const Skills = () => {
       icon: 'react'
     },
     {
+      name: 'Power BI',
+      level: 'Intermediate',
+      customIcon: 'https://res.cloudinary.com/dgsmgz8zl/image/upload/v1748161801/png-transparent-power-bi-business-intelligence-microsoft-analytics-microsoft-text-rectangle-logo-thumbnail_v1dpfw.png'
+    },
+    {
+      name: 'Git/GitHub',
+      level: 'Intermediate',
+      icon: 'github'
+    },
+    {
+      name: 'MySQL',
+      level: 'Advanced',
+      icon: 'mysql'
+    },
+    {
       name: 'JavaScript',
       level: 'Advanced',
       icon: 'javascript'
     },
     {
       name: 'Node.js',
-      level: 'Advanced',
+      level: 'Expert',
       icon: 'nodejs'
     },
     {
+      name: 'Express.js',
+      level: 'Expert',
+      customIcon: 'https://res.cloudinary.com/dgsmgz8zl/image/upload/v1748161041/express-js_o92kpx.png'
+    },
+    {
       name: 'MongoDB',
-      level: 'Advanced',
+      level: 'Intermediate',
       icon: 'mongodb'
     },
     {
@@ -31,7 +51,7 @@ const Skills = () => {
     {
       name: 'HTML/CSS',
       level: 'Advanced',
-      icon: 'html5'
+      icon: ['html5', "css3"]
     }
   ];
 
@@ -43,8 +63,17 @@ const Skills = () => {
           {skills.map((skill, index) => (
             <div key={index} className="skill-card">
               <div className="skill-icon">
-                <i className={`devicon-${skill.icon}-plain colored`} />
+                {skill.customIcon ? (
+                  <img src={skill.customIcon} alt={`${skill.name} icon`} className="custom-icon" />
+                ) : Array.isArray(skill.icon) ? (
+                  skill.icon.map((ic, i) => (
+                    <i key={i} className={`devicon-${ic}-plain colored`} />
+                  ))
+                ) : (
+                  <i className={`devicon-${skill.icon}-plain colored`} />
+                )}
               </div>
+
               <h3>{skill.name}</h3>
               <p className="skill-level">{skill.level}</p>
               <div className="skill-progress">

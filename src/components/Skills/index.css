@@ -1,6 +1,13 @@
 .skills-section {
   padding: 80px 0;
-  background: #f9f9f9;
+  background: var(--background-light);
+}
+
+.custom-icon {
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+  vertical-align: middle;
 }
 
 .container {
@@ -12,7 +19,7 @@
 .section-title {
   text-align: center;
   font-size: 3rem;
-  color: #333;
+  color: var(--text-color);
   margin-bottom: 60px;
   position: relative;
 }
@@ -25,7 +32,7 @@
   transform: translateX(-50%);
   width: 100px;
   height: 3px;
-  background: linear-gradient(to right, #6c5ce7, #a366ff);
+  background: linear-gradient(to right, var(--primary-color), var(--primary-light));
 }
 
 .skills-grid {
@@ -36,10 +43,10 @@
 }
 
 .skill-card {
-  background: white;
+  background: var(--white);
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow);
   transition: transform 0.3s ease;
   cursor: pointer;
 }
@@ -55,18 +62,18 @@
 
 .skill-icon i {
   font-size: 4rem;
-  color: #6c5ce7;
+  color: var(--primary-color);
 }
 
 .skill-card h3 {
   text-align: center;
   margin-bottom: 10px;
-  color: #333;
+  color: var(--text-color);
 }
 
 .skill-level {
   text-align: center;
-  color: #666;
+  color: var(--text-light);
   font-size: 0.9rem;
   margin-bottom: 20px;
 }
@@ -74,7 +81,7 @@
 .skill-progress {
   width: 100%;
   height: 10px;
-  background: #f0f0f0;
+  background: var(--gray-light);
   border-radius: 5px;
   overflow: hidden;
   margin-top: 10px;
@@ -82,7 +89,7 @@
 
 .progress-bar {
   height: 100%;
-  background: linear-gradient(to right, #6c5ce7, #a366ff);
+  background: linear-gradient(to right, var(--primary-color), var(--primary-light));
   border-radius: 5px;
   transition: width 0.3s ease;
 }
@@ -92,6 +99,13 @@
   .section-title {
     font-size: 2.5rem;
   }
+
+  .custom-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  vertical-align: middle;
+}
   
   .skills-grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -104,6 +118,16 @@
   
   .skill-icon i {
     font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .skills-grid {
+    padding: 10px;
   }
 }
 

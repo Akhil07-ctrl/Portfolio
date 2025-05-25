@@ -1,20 +1,20 @@
 .certificates-section {
   padding: 80px 0;
-  background: #fff;
+  background: var(--background-light);
 }
 
 .certificates-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
   gap: 30px;
   padding: 20px;
 }
 
 .certificate-card {
-  background: white;
+  background: var(--white);
   border-radius: 15px;
   padding: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -22,72 +22,59 @@
 
 .certificate-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
 .certificate-header {
   display: flex;
   align-items: center;
-  gap: 20px;
   margin-bottom: 20px;
-  padding: 20px;
-  background: linear-gradient(135deg, #6c5ce7, #a366ff);
-  color: white;
+  padding: 5px;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
   border-radius: 10px;
-}
-
-.certificate-image {
-  flex: 0 0 100px;
-  height: 100px;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.certificate-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .certificate-info {
   flex: 1;
+  margin-bottom: 10px;
 }
 
 .certificate-info h3 {
   margin: 0 0 5px 0;
   font-size: 1.2rem;
+  color: var(--text-color);
 }
 
 .organization {
   font-weight: 600;
   margin: 0 0 5px 0;
+  color: var(--text-color);
 }
 
 .date {
   font-size: 0.9rem;
   opacity: 0.9;
+  color: var(--text-light);
 }
 
 .certificate-content {
   padding: 20px;
-  background: #f8f9fa;
+  background: var(--background-light);
   border-radius: 10px;
 }
 
 .certificate-content p {
   margin: 0;
-  color: #333;
+  color: var(--text-color);
   line-height: 1.6;
 }
 
 .certificate-badge {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 2rem;
-  color: #6c5ce7;
-  opacity: 0.2;
-  transition: opacity 0.3s ease;
+  top: 10px;
+  right: 10px;
+  color: #f5c518;
+  font-size: 1.5rem;
 }
 
 .certificate-card:hover .certificate-badge {
@@ -121,10 +108,6 @@
     flex-direction: column;
     text-align: center;
     gap: 15px;
-  }
-
-  .certificate-image {
-    margin: 0 auto;
   }
 
   .certificate-info h3 {

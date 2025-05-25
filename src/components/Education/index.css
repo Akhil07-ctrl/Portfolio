@@ -1,22 +1,20 @@
-@import '@fortawesome/fontawesome-svg-core/styles.css';
-
 .education-section {
   padding: 80px 0;
-  background: #f9f9f9;
+  background: var(--background-light);
 }
 
 .education-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
   gap: 30px;
   padding: 20px;
 }
 
 .education-card {
-  background: white;
-  border-radius: 15px;
+  background: var(--white);
   padding: 30px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
   transition: transform 0.3s ease;
 }
 
@@ -29,7 +27,7 @@
 }
 
 .education-degree {
-  color: #333;
+  color: var(--text-color);
   margin-bottom: 10px;
   font-size: 1.5rem;
 }
@@ -38,12 +36,28 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
-  color: #666;
+  color: var(--text-color);
 }
 
 .education-institution {
+  color: var(--primary-color);
   font-weight: 600;
-  color: #6c5ce7;
+}
+
+.institution-name {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.degree {
+  color: var(--text-light);
+  margin-bottom: 5px;
+}
+
+.period {
+  color: var(--text-light);
+  margin-bottom: 15px;
 }
 
 .education-period {
@@ -71,19 +85,6 @@
 .education-achievements h4 {
   color: #6c5ce7;
   margin-bottom: 10px;
-  font-size: 1.2rem;
-}
-
-.achievement-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #666;
-  margin-bottom: 8px;
-}
-
-.achievement-icon {
-  color: #6c5ce7;
   font-size: 1.2rem;
 }
 

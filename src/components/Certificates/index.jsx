@@ -1,35 +1,36 @@
-import React from 'react';
+import { FaCertificate } from "react-icons/fa";
+
 import './index.css';
 
 const Certificates = () => {
   const certificates = [
     {
-      title: 'Certified React Developer',
-      organization: 'React Academy',
-      date: '2023',
+      title: 'Full Stack Development with MERN Specialization',
+      organization: 'NxtWave',
+      date: '2025',
       description: 'Completed advanced React development course covering hooks, context, and state management.',
-      image: 'react-cert.png'
+      image: 'https://res.cloudinary.com/dgsmgz8zl/image/upload/v1748174850/NxtWave_IRC-1_lvyyaq.png'
     },
     {
-      title: 'Full Stack Developer',
-      organization: 'FreeCodeCamp',
-      date: '2022',
+      title: '30 Days of Code Challenge',
+      organization: 'NxtWave',
+      date: '2025',
       description: 'Completed full stack development certification with projects in React, Node.js, and MongoDB.',
-      image: 'freecodecamp-cert.png'
+      image: 'https://res.cloudinary.com/dgsmgz8zl/image/upload/v1748174850/NxtWave_IRC-1_lvyyaq.png'
     },
     {
       title: 'AWS Certified Developer',
       organization: 'Amazon Web Services',
       date: '2022',
       description: 'Certified in AWS cloud development using services like Lambda, S3, and DynamoDB.',
-      image: 'aws-cert.png'
+      image: 'https://res.cloudinary.com/dgsmgz8zl/image/upload/v1748174850/NxtWave_IRC-1_lvyyaq.png'
     },
     {
       title: 'Professional Scrum Developer',
       organization: 'Scrum.org',
       date: '2021',
       description: 'Certified in Scrum methodology and agile software development practices.',
-      image: 'scrum-cert.png'
+      image: 'https://res.cloudinary.com/dgsmgz8zl/image/upload/v1748174850/NxtWave_IRC-1_lvyyaq.png'
     }
   ];
 
@@ -41,20 +42,18 @@ const Certificates = () => {
           {certificates.map((cert, index) => (
             <div key={index} className="certificate-card">
               <div className="certificate-header">
-                <div className="certificate-image">
-                  <img src={`/certificates/${cert.image}`} alt={cert.title} />
-                </div>
-                <div className="certificate-info">
-                  <h3>{cert.title}</h3>
-                  <p className="organization">{cert.organization}</p>
-                  <p className="date">{cert.date}</p>
-                </div>
+                <img src={cert.image} alt={cert.title} />
+              </div>
+              <div className="certificate-info">
+                <h3>{cert.title}</h3>
+                <p className="organization">{cert.organization}</p>
+                <p className="date">{cert.date}</p>
               </div>
               <div className="certificate-content">
                 <p>{cert.description}</p>
               </div>
               <div className="certificate-badge">
-                <i className="fas fa-certificate"></i>
+                <FaCertificate style={{ fontSize: '2rem', color: '#FFD700' }} />
               </div>
             </div>
           ))}

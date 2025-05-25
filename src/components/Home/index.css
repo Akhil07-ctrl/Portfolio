@@ -320,6 +320,7 @@
 }
 
 .skill-card {
+  text-align: center;
   background: var(--white);
   padding: 25px;
   border-radius: var(--border-radius);
@@ -428,6 +429,23 @@
 .project-links {
   display: flex;
   gap: 15px;
+}
+
+.read-more-btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+  color: var(--primary-light);
+  text-decoration: underline;
 }
 
 .project-link {

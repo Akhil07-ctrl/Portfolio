@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun, faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
@@ -92,7 +92,7 @@ const Header = () => {
       <div className="container">
         <nav className="nav">
           <Link to="/" className="logo" onClick={closeMobileMenu}>
-            <h1>John<span>Doe</span></h1>
+            <h1>Kundena<span>Akhil</span></h1>
           </Link>
           
           <div className={`nav-content ${isMobileMenuOpen ? 'active' : ''}`}>
