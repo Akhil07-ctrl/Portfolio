@@ -4,7 +4,7 @@ import './index.css';
 const Skills = () => {
   const skills = [
     {
-      name: 'React.js',
+      name: 'React',
       level: 'Advanced',
       icon: 'react'
     },

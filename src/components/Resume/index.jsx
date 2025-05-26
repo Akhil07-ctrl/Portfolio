@@ -1,4 +1,4 @@
-import React from 'react';
+
 import './index.css';
 
 const Resume = () => {
@@ -11,7 +11,7 @@ const Resume = () => {
       title: 'Technical Skills',
       content: [
         'Programming Languages: JavaScript, Python, Java',
-        'Frontend: React.js, HTML5, CSS3',
+        'Frontend: React + Vite, HTML5, CSS3',
         'Backend: Node.js, Express.js',
         'Databases: MongoDB, MySQL, PostgreSQL',
         'Cloud: AWS, Azure',
@@ -22,14 +22,14 @@ const Resume = () => {
       title: 'Projects',
       content: [
         {
-          name: 'E-commerce Platform',
-          description: 'Built a scalable e-commerce platform using React and Node.js with real-time inventory tracking and payment integration.',
-          technologies: ['React', 'Node.js', 'MongoDB', 'Stripe']
+          name: 'NxtTrendz (E-commerce Platform)',
+          description: "This project is a React-based e-commerce application that simulates an Amazon-like store. It features a login page, product listing, detailed product views, a shopping cart with add/update/remove functionalities, and a payment page. Protected routes ensure that only authenticated users access and uses React's Context API for cart state management.",
+          technologies: ['React + Vite', 'JWT Authentication', 'Context API', 'React Router']
         },
         {
-          name: 'Social Media App',
-          description: 'Developed a social media application with real-time chat, image sharing, and user authentication.',
-          technologies: ['React', 'Firebase', 'Socket.io']
+          name: 'Loan Manager Application',
+          description: 'The Loan Manager is a comprehensive web application built with React that facilitates loan management between users and administrators. The platform features a secure authentication system, allowing users to apply for loans while administrators can manage loan applications through a sophisticated dashboard that displays real-time statistics.',
+          technologies: ['React + Vite', 'Node.js', 'Express.js', 'MongoDB', 'JWT Authentication']
         }
       ]
     }

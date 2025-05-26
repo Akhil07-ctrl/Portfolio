@@ -8,6 +8,7 @@
   height: 75px;
   object-fit: contain;
   vertical-align: middle;
+  border-radius: 10px;
 }
 
 .container {

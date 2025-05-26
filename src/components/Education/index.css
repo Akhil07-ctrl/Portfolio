@@ -73,7 +73,7 @@
 }
 
 .education-description {
-  color: #333;
+  color: var(--text-color);
   line-height: 1.6;
   margin-bottom: 20px;
 }

@@ -459,8 +459,7 @@
       grid-column: 1;
     }
     
-    .experience-stats, 
-    .skills-growth {
+    .experience-stats {
       grid-column: 2;
     }
     
@@ -487,6 +486,10 @@
     .experience-stats {
       margin: 10px auto 30px;
       max-width: 700px;
+    }
+
+    .timeline-content {
+      margin-left: 40px;
     }
   }
   
@@ -521,6 +524,7 @@
     
     .timeline-content {
       padding: 15px;
+      margin-left: 40px;
     }
     
     .timeline-title h3 {
@@ -556,6 +560,10 @@
     .experience-stats {
       margin: 10px 0 25px;
     }
+
+    .timeline-content {
+      margin-left: 40px;
+    }
     
     .timeline-header {
       flex-direction: row;
@@ -589,27 +597,6 @@
     
     .stat-number {
       font-size: 2rem;
-    }
-    
-    .skill-progress {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    
-    .skill-label {
-      width: 100%;
-      margin-bottom: 5px;
-    }
-    
-    .progress-bar {
-      width: 100%;
-      margin: 5px 0;
-    }
-    
-    .skill-percentage {
-      width: 100%;
-      text-align: left;
-      margin-top: 5px;
     }
     
     .experience-cta {
@@ -664,6 +651,7 @@
     
     .timeline-content {
       padding: 15px;
+      margin-left: -10px;
     }
     
     .timeline-header {
@@ -674,7 +662,7 @@
     }
     
     .timeline-icon {
-      margin-right: 10px;
+      margin-bottom: auto;
       font-size: 1.2rem;
       flex: 0 0 auto;
     }
@@ -741,41 +729,6 @@
       padding: 15px 20px;
     }
     
-    .skills-growth {
-      padding: 20px 15px;
-      margin: 25px 0;
-    }
-    
-    .skills-growth h3 {
-      font-size: 1.3rem;
-      margin-bottom: 20px;
-    }
-    
-    .skill-progress {
-      flex-direction: column;
-      align-items: flex-start;
-      margin-bottom: 15px;
-    }
-    
-    .skill-label {
-      width: 100%;
-      margin-bottom: 5px;
-      font-size: 0.9rem;
-    }
-    
-    .progress-bar {
-      width: 100%;
-      margin: 5px 0;
-      height: 8px;
-    }
-    
-    .skill-percentage {
-      width: 100%;
-      text-align: left;
-      margin-top: 5px;
-      font-size: 0.9rem;
-    }
-    
     .experience-cta {
       margin-top: 30px;
       padding: 25px 15px;
@@ -816,17 +769,6 @@
     .cta-button {
       padding: 12px 20px;
     }
-  }
-  
-  /* Animation for Skills Progress Bars */
-  @keyframes progressAnimation {
-    0% {
-      width: 0;
-    }
-  }
-  
-  .skills-growth.animate .progress {
-    animation: progressAnimation 1.5s ease-out forwards;
   }
   
   /* Print Styles */

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
@@ -7,9 +7,9 @@ import { faEnvelope, faArrowRight, faCode, faServer, faMobileScreen, faDatabase 
 import "./index.css";
 
 const description = {
-  nxtTrendz : "This project is a React-based e-commerce application that simulates an Amazon-like store. It features a login page, product listing, detailed product views, a shopping cart with add/update/remove functionalities, and a payment page. Protected routes ensure that only authenticated users access and uses React's Context API for cart state management.",
-  loanManagerApplication : "The Loan Manager is a comprehensive web application built with React that facilitates loan management between users and administrators. The platform features a secure authentication system, allowing users to apply for loans while administrators can manage loan applications through a sophisticated dashboard that displays real-time statistics.",
-  miniGames : "Mini Games is a React-based web application featuring four engaging browser games: Emoji Game, Memory Matrix, Rock Paper Scissors, and Card-Flip Memory Game. Built with modern React (v19) and Vite, this project offers a clean, responsive interface for users to select and play different mini-games."
+  nxtTrendz: "This project is a React-based e-commerce application that simulates an Amazon-like store. It features a login page, product listing, detailed product views, a shopping cart with add/update/remove functionalities, and a payment page. Protected routes ensure that only authenticated users access and uses React's Context API for cart state management.",
+  loanManagerApplication: "The Loan Manager is a comprehensive web application built with React that facilitates loan management between users and administrators. The platform features a secure authentication system, allowing users to apply for loans while administrators can manage loan applications through a sophisticated dashboard that displays real-time statistics.",
+  miniGames: "Mini Games is a React-based web application featuring four engaging browser games: Emoji Game, Memory Matrix, Rock Paper Scissors, and Card-Flip Memory Game. Built with modern React (v19) and Vite, this project offers a clean, responsive interface for users to select and play different mini-games."
 }
 
 const Home = () => {
@@ -28,7 +28,7 @@ const Home = () => {
   const toggleMiniGamesReadMore = () => {
     setIsMiniGamesExpanded(!isMiniGamesExpanded);
   }
-  
+
 
   return (
     <div className="home">
@@ -185,7 +185,7 @@ const Home = () => {
                 </p>
                 <div className="project-tech">
                   <span>Node.js</span>
-                  <span>Express</span>
+                  <span>Express.js</span>
                   <span>MongoDB</span>
                   <span>React + Vite</span>
                 </div>

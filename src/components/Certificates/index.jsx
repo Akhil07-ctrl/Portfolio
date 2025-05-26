@@ -12,25 +12,25 @@ const Certificates = () => {
       image: 'https://res.cloudinary.com/dgsmgz8zl/image/upload/v1748174850/NxtWave_IRC-1_lvyyaq.png'
     },
     {
-      title: '30 Days of Code Challenge',
+      title: 'Node JS',
       organization: 'NxtWave',
       date: '2025',
       description: 'Completed full stack development certification with projects in React, Node.js, and MongoDB.',
-      image: 'https://res.cloudinary.com/dgsmgz8zl/image/upload/v1748174850/NxtWave_IRC-1_lvyyaq.png'
+      image: 'https://res.cloudinary.com/dgsmgz8zl/image/upload/v1748241429/NODE_JS-1_wfp49p.png'
     },
     {
-      title: 'AWS Certified Developer',
-      organization: 'Amazon Web Services',
-      date: '2022',
+      title: 'MySQL - Introductiion to Databases',
+      organization: 'NxtWave',
+      date: '2024',
       description: 'Certified in AWS cloud development using services like Lambda, S3, and DynamoDB.',
-      image: 'https://res.cloudinary.com/dgsmgz8zl/image/upload/v1748174850/NxtWave_IRC-1_lvyyaq.png'
+      image: 'https://res.cloudinary.com/dgsmgz8zl/image/upload/v1748241429/Introduction_to_Databases-1_kbgv0r.png'
     },
     {
-      title: 'Professional Scrum Developer',
-      organization: 'Scrum.org',
-      date: '2021',
+      title: '30 Days of Code Challenge',
+      organization: 'NxtWave',
+      date: '2025',
       description: 'Certified in Scrum methodology and agile software development practices.',
-      image: 'https://res.cloudinary.com/dgsmgz8zl/image/upload/v1748174850/NxtWave_IRC-1_lvyyaq.png'
+      image: 'https://res.cloudinary.com/dgsmgz8zl/image/upload/v1748233005/30_Days_of_Code_Challenge_x1xq1l.png'
     }
   ];
 

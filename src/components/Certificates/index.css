@@ -5,7 +5,7 @@
 
 .certificates-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  grid-template-columns: repeat(1, minmax(300px, 1fr));
   gap: 30px;
   padding: 20px;
 }
@@ -29,9 +29,12 @@
   display: flex;
   align-items: center;
   margin-bottom: 20px;
-  padding: 5px;
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
   border-radius: 10px;
+}
+
+.certificate-header img {
+  max-width: auto; 
+  height: auto; /* Adjust the height as needed */
 }
 
 .certificate-info {
@@ -117,10 +120,6 @@
 
 @media (max-width: 480px) {
   .certificate-card {
-    padding: 15px;
-  }
-
-  .certificate-header {
     padding: 15px;
   }
 
