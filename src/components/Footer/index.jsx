@@ -11,14 +11,14 @@ const Footer = () => {
           <p>
             Made with <span className="love">❤️</span> by Kundena Akhil
           </p>
-          <p className="social-media-icons">
+          <div className="social-media-icons">
             <a
               href="https://www.linkedin.com/in/kundena-akhil-4b7073170/"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-icon"
             >
-              <FaLinkedin size={20} />
+              <FaLinkedin />
             </a>
             <a
               href="https://github.com/Akhil07-ctrl"
@@ -26,7 +26,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="footer-icon"
             >
-              <FaGithub size={20} />
+              <FaGithub />
             </a>
             <a
               href="https://x.com/akhil73602199"
@@ -34,7 +34,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="footer-icon"
             >
-              <FaTwitter size={20} />
+              <FaTwitter />
             </a>
             <a
               href="mailto:akhilkundena@gmail.com"
@@ -42,9 +42,9 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="footer-icon"
             >
-              <FaEnvelope size={20} />
+              <FaEnvelope />
             </a>
-          </p>
+          </div>
         </div>
 
         <div className="footer-bottom">

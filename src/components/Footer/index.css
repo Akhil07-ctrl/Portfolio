@@ -26,19 +26,33 @@
   }
 }
 
+.social-media-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  animation: fadeInUp 0.8s 0.4s ease forwards;
+}
+
 .footer-icon {
-  margin: 1.5rem;
-  vertical-align: middle;
-  color: #999;
-  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--text-light);
   transition: all 0.3s ease;
-  animation: fadeInUp 0.8s 0.8s ease forwards;
-  will-change: transform, color;
+  display: inline-flex;
 }
 
 .footer-icon:hover {
   color: var(--primary-color);
   transform: translateY(-3px);
+}
+
+/* Dark mode styles */
+body.dark-mode .footer-icon {
+  color: #b3b3b3;
+}
+
+body.dark-mode .footer-icon:hover {
+  color: var(--primary-light);
 }
 
 .footer::before {

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope, faArrowRight, faCode, faServer, faMobileScreen, faDatabase } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faArrowRight, faCode, faServer, faMobileScreen, faDatabase, faDownload } from '@fortawesome/free-solid-svg-icons';
 
 import "./index.css";
 
@@ -16,6 +16,17 @@ const Home = () => {
   const [isNxtTrendzExpanded, setIsNxtTrendzExpanded] = useState(false);
   const [isLoanManagerApplicationExpanded, setIsLoanManagerApplicationExpanded] = useState(false);
   const [isMiniGamesExpanded, setIsMiniGamesExpanded] = useState(false);
+  
+  // Function to handle resume download
+  const handleDownloadResume = () => {
+    // Create a link element
+    const link = document.createElement('a');
+    link.href = '/Kundena Akhil(T).pdf';
+    link.download = 'Kundena Akhil(T).pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   const toggleNxtTrendzReadMore = () => {
     setIsNxtTrendzExpanded(!isNxtTrendzExpanded);
@@ -49,6 +60,9 @@ const Home = () => {
                 e.preventDefault();
                 document.getElementById('projects').scrollIntoView({ behavior: 'smooth', block: 'start' });
               }}>View My Work</a>
+              <button onClick={handleDownloadResume} className="cta-button download">
+                <FontAwesomeIcon icon={faDownload} /> Resume
+              </button>
               <a href="#contact" className="cta-button secondary" onClick={(e) => {
                 e.preventDefault();
                 document.getElementById('contact').scrollIntoView({ behavior: 'smooth', block: 'start' });

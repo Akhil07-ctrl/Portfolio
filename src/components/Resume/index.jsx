@@ -1,7 +1,19 @@
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import './index.css';
 
 const Resume = () => {
+  // Function to handle resume download
+  const handleDownloadResume = () => {
+    // Create a link element
+    const link = document.createElement('a');
+    link.href = '/Kundena Akhil(T).pdf';
+    link.download = 'Kundena Akhil(T).pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   const resumeSections = [
     {
       title: 'Professional Summary',
@@ -38,7 +50,12 @@ const Resume = () => {
   return (
     <section id="resume" className="resume-section">
       <div className="container">
-        <h2 className="section-title">Resume</h2>
+        <div className="resume-header">
+          <h2 className="section-title">Resume</h2>
+          <button className="download-resume-btn" onClick={handleDownloadResume}>
+            <FontAwesomeIcon icon={faDownload} /> Download Resume
+          </button>
+        </div>
         <div className="resume-content">
           <div className="resume-main">
             {resumeSections.map((section, index) => (

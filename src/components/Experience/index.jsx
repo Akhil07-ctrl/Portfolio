@@ -7,7 +7,8 @@ import {
   faMapMarkerAlt, 
   faChevronDown, 
   faChevronUp,
-  faExternalLinkAlt
+  faExternalLinkAlt,
+  faDownload
 } from '@fortawesome/free-solid-svg-icons';
 import './index.css';
 
@@ -15,6 +16,17 @@ const Experience = () => {
   const [expandedItems, setExpandedItems] = useState({});
   const [isIntersecting, setIsIntersecting] = useState({});
   const experienceRefs = useRef([]);
+  
+  // Function to handle resume download
+  const handleDownloadResume = () => {
+    // Create a link element
+    const link = document.createElement('a');
+    link.href = '/Kundena Akhil(T).pdf';
+    link.download = 'Kundena Akhil(T).pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   // Experience data
   const experiences = [
@@ -208,6 +220,9 @@ const Experience = () => {
           <p>Interested in my professional background?</p>
           <div className="cta-buttons">
             <Link to="/resume" className="cta-button primary">View My Resume</Link>
+            <button onClick={handleDownloadResume} className="cta-button download">
+              <FontAwesomeIcon icon={faDownload} /> Download Resume
+            </button>
             <a href="mailto:akhilkundena@gmail.com" className="cta-button secondary">Contact Me</a>
           </div>
         </div>

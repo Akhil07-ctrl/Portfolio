@@ -103,6 +103,49 @@
   border: 2px solid var(--primary-color);
 }
 
+.cta-button.download {
+  background-color: #4CAF50;
+  color: white;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.cta-button.download:hover {
+  background-color: #45a049;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.5);
+}
+
+.cta-button.download:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+/* Dark mode styles */
+body.dark-mode .cta-button.download {
+  background-color: #3d8b40;
+  color: white;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
+}
+
+body.dark-mode .cta-button.download:hover {
+  background-color: #4CAF50;
+  color: white;
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+}
+
+body.dark-mode .cta-button.download:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.1);
+}
+
 .cta-button:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
@@ -603,6 +646,48 @@
 }
 
 /* Responsive Design */
+
+/* Large screens and iPad Pro 12.9" landscape */
+@media (max-width: 1366px) {
+  .hero-container {
+    gap: 30px;
+  }
+  
+  .hero-content {
+    max-width: 550px;
+  }
+  
+  .profile-image-container {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+/* iPad Pro 12.9" portrait and iPad Pro 11"/Air landscape */
+@media (max-width: 1024px) and (min-width: 993px) {
+  .hero-title {
+    font-size: 3.7rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.9rem;
+  }
+  
+  .hero-content {
+    max-width: 500px;
+  }
+  
+  .profile-image-container {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .about-content {
+    gap: 40px;
+  }
+}
+
+/* General tablets and smaller desktops */
 @media (max-width: 992px) {
   .hero-title {
     font-size: 3.5rem;
@@ -628,6 +713,94 @@
   }
 }
 
+/* iPad Pro 12.9" portrait */
+@media (min-width: 1024px) and (max-width: 1024px) {
+  .hero-container {
+    gap: 30px;
+    padding: 0 30px;
+  }
+  
+  .hero-content {
+    max-width: 500px;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .hero-actions {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .cta-button.download {
+    padding: 12px 20px;
+  }
+  
+  .profile-image-container {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/* iPad Pro 11" and iPad Air portrait */
+@media (min-width: 820px) and (max-width: 834px) {
+  .hero-container {
+    gap: 25px;
+    padding: 0 20px;
+  }
+  
+  .hero-content {
+    max-width: 450px;
+  }
+  
+  .hero-title {
+    font-size: 3.2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.7rem;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+  }
+  
+  .profile-image-container {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .hero-actions {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+  
+  .cta-button.download {
+    padding: 10px 15px;
+    font-size: 0.95rem;
+    gap: 6px;
+  }
+  
+  .about-content,
+  .contact-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .skills-overview {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+/* General tablets and mobile devices */
 @media (max-width: 768px) {
   .hero-container {
     flex-direction: column-reverse;
@@ -652,6 +825,13 @@
   
   .hero-actions {
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
   }
   
   .hero-social {
@@ -680,6 +860,26 @@
   
   .hero-subtitle {
     font-size: 1.3rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-button {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 0.85rem;
+  }
+  
+  .cta-button.download {
+    padding: 10px 15px;
+    font-size: 0.85rem;
+    justify-content: center;
   }
   
   .hero-description {
