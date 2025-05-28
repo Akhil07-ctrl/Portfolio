@@ -1,0 +1,11 @@
+/* Additional mobile styles for the header */
+@media (max-width: 768px) {
+  /* Show/hide appropriate elements for mobile */
+  .mobile-only {
+    display: flex !important;
+  }
+  
+  .desktop-only {
+    display: none !important;
+  }
+}

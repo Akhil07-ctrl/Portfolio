@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun, faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+
 import './index.css';
+import './mobile-styles.css';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,7 +18,7 @@ const Header = () => {
     // If no stored preference, check system preference
     return window.matchMedia('(prefers-color-scheme: dark)').matches;
   });
-  
+
   const location = useLocation();
 
   // Handle dark mode state changes
@@ -64,7 +66,7 @@ const Header = () => {
   const toggleDarkMode = () => {
     const newDarkMode = !isDarkMode;
     setIsDarkMode(newDarkMode);
-    
+
     if (newDarkMode) {
       document.body.classList.add('dark-mode');
       localStorage.setItem('darkMode', 'true');
@@ -93,12 +95,12 @@ const Header = () => {
           <Link to="/" className="logo" onClick={closeMobileMenu}>
             <h1>Kundena<span>Akhil</span></h1>
           </Link>
-          
+
           <div className={`nav-content ${isMobileMenuOpen ? 'active' : ''}`}>
             <ul className="nav-links">
               <li>
-                <Link 
-                  to="/" 
+                <Link
+                  to="/"
                   className={`nav-link ${isActive('/') ? 'active' : ''}`}
                   onClick={closeMobileMenu}
                 >
@@ -106,8 +108,8 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/skills" 
+                <Link
+                  to="/skills"
                   className={`nav-link ${isActive('/skills') ? 'active' : ''}`}
                   onClick={closeMobileMenu}
                 >
@@ -115,8 +117,8 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/experience" 
+                <Link
+                  to="/experience"
                   className={`nav-link ${isActive('/experience') ? 'active' : ''}`}
                   onClick={closeMobileMenu}
                 >
@@ -124,8 +126,8 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/education" 
+                <Link
+                  to="/education"
                   className={`nav-link ${isActive('/education') ? 'active' : ''}`}
                   onClick={closeMobileMenu}
                 >
@@ -133,8 +135,8 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/certificates" 
+                <Link
+                  to="/certificates"
                   className={`nav-link ${isActive('/certificates') ? 'active' : ''}`}
                   onClick={closeMobileMenu}
                 >
@@ -142,8 +144,8 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/resume" 
+                <Link
+                  to="/resume"
                   className={`nav-link ${isActive('/resume') ? 'active' : ''}`}
                   onClick={closeMobileMenu}
                 >
@@ -151,14 +153,22 @@ const Header = () => {
                 </Link>
               </li>
             </ul>
-            
-            <div className="theme-toggle" onClick={toggleDarkMode} aria-label="Toggle dark mode">
+
+            {/* Theme toggle for desktop view */}
+            <div className="theme-toggle desktop-only" onClick={toggleDarkMode} aria-label="Toggle dark mode">
               <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} />
             </div>
           </div>
-          
-          <div className="mobile-menu" onClick={toggleMobileMenu} aria-label="Toggle mobile menu">
-            <FontAwesomeIcon icon={isMobileMenuOpen ? faXmark : faBars} />
+
+          {/* Theme toggle for mobile view - positioned left of hamburger */}
+          <div className="mobile-controls">
+            <div className="theme-toggle mobile-only" onClick={toggleDarkMode} aria-label="Toggle dark mode">
+              <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} />
+            </div>
+
+            <div className="mobile-menu" onClick={toggleMobileMenu} aria-label="Toggle mobile menu">
+              <FontAwesomeIcon icon={isMobileMenuOpen ? faXmark : faBars} />
+            </div>
           </div>
         </nav>
       </div>

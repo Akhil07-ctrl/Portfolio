@@ -5,54 +5,55 @@ import './index.css';
 const Education = () => {
   const education = [
     {
-      degree: 'Master of Business Administration',
+      degree: 'MBA - Sales and Marketing',
       institution: "Bhavan's Vivekananda College",
       period: '2021 - 2023',
       location: 'Hyderabad, Telangana',
-      description: 'Focused on advanced computer science topics including machine learning, data structures, and algorithms.',
+      description: 'Specialized in Sales and Marketing with a focus on market research, consumer behavior, brand management, and digital marketing strategies.',
       achievements: [
         'Graduated with distinction',
-        'Published research paper on AI',
-        'Scholarship recipient'
+        'Presented market analysis case study',
+        'Organized inter-college marketing fest',
+        'Placement Coordinator – facilitated campus recruitment and corporate engagement'
       ]
     },
     {
-      degree: 'Bachelor of Technology',
+      degree: 'B.Tech in Instrumentation and Control Engineering',
       institution: 'Dr B R Ambedkar National Institute of Technology',
       period: '2015 - 2019',
       location: 'Jalandhar, Punjab',
-      description: 'Completed core computer science curriculum with emphasis on software engineering and web development.',
+      description: 'Covered core subjects like process control, industrial automation, sensors, and embedded systems with exposure to programming and system design.',
       achievements: [
-        'Graduated with honors',
-        'Member of ACM',
-        'Won hackathon competition'
+        'Team member in organizing North India’s largest cultural fest at NIT Jalandhar',
+        'Developed an IoT-based heart rate monitoring system using Arduino for real-time health tracking',
       ]
     },
     {
-      degree: 'Intermediate',
+      degree: 'Intermediate (MPC)',
       institution: 'Sri Chaitanya Junior Kalasala',
       period: '2013 - 2015',
       location: 'Hyderabad, Telangana',
-      description: 'Completed core computer science curriculum with emphasis on software engineering and web development.',
+      description: 'Completed higher secondary education with a focus on Mathematics, Physics, and Chemistry.',
       achievements: [
-        'Graduated with honors',
-        'Member of ACM',
-        'Won hackathon competition'
+        'Scored 978/1000 marks',
+        'State-level science fair participant',
+        'Consistent academic performer'
       ]
     },
     {
-      degree: 'SSC',
+      degree: 'SSC (10th Grade)',
       institution: 'Sri Chaitanya Techno School',
       period: '2012 - 2013',
       location: 'Hyderabad, Telangana',
-      description: 'Completed core computer science curriculum with emphasis on software engineering and web development.',
+      description: 'Completed secondary school with strong foundation in science and mathematics.',
       achievements: [
-        'Graduated with honors',
-        'Member of ACM',
-        'Won hackathon competition'
+        'Scored 9.8 GPA',
+        'Won school-level science quiz',
+        'Class topper in mathematics'
       ]
     }
   ];
+
 
   return (
     <section id="education" className="education-section">

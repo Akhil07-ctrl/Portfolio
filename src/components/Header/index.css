@@ -130,6 +130,13 @@
   transform: scale(1);
 }
 
+/* Mobile Controls */
+.mobile-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 /* Mobile Menu */
 .mobile-menu {
   display: none;
@@ -141,6 +148,15 @@
 
 .mobile-menu:hover {
   color: var(--primary-color);
+}
+
+/* Hide/show elements based on screen size */
+.mobile-only {
+  display: none;
+}
+
+.desktop-only {
+  display: flex;
 }
 
 /* Dark Mode Styles */

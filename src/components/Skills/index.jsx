@@ -52,6 +52,16 @@ const Skills = () => {
       name: 'HTML/CSS',
       level: 'Advanced',
       icon: ['html5', "css3"]
+    },
+    {
+      name: 'Bootstrap',
+      level: 'Advanced',
+      icon: 'bootstrap'
+    },
+    {
+      name: 'TypeScript',
+      level: 'Expert',
+      icon: 'typescript'
     }
   ];
 

@@ -8,31 +8,32 @@ const Certificates = () => {
       title: 'Full Stack Development with MERN Specialization',
       organization: 'NxtWave',
       date: '2025',
-      description: 'Completed advanced React development course covering hooks, context, and state management.',
+      description: 'Completed intensive training on building full-stack web applications using MongoDB, Express.js, React, and Node.js. Developed multiple end-to-end projects.',
       image: 'https://res.cloudinary.com/dgsmgz8zl/image/upload/v1748174850/NxtWave_IRC-1_lvyyaq.png'
     },
     {
-      title: 'Node JS',
+      title: 'Node.js Certification',
       organization: 'NxtWave',
       date: '2025',
-      description: 'Completed full stack development certification with projects in React, Node.js, and MongoDB.',
+      description: 'Mastered backend development using Node.js, including Express.js, RESTful APIs, JWT authentication, and integration with MongoDB.',
       image: 'https://res.cloudinary.com/dgsmgz8zl/image/upload/v1748241429/NODE_JS-1_wfp49p.png'
     },
     {
-      title: 'MySQL - Introductiion to Databases',
+      title: 'MySQL - Introduction to Databases',
       organization: 'NxtWave',
       date: '2024',
-      description: 'Certified in AWS cloud development using services like Lambda, S3, and DynamoDB.',
+      description: 'Gained practical knowledge in relational databases, SQL queries, joins, constraints, and database schema design using MySQL.',
       image: 'https://res.cloudinary.com/dgsmgz8zl/image/upload/v1748241429/Introduction_to_Databases-1_kbgv0r.png'
     },
     {
       title: '30 Days of Code Challenge',
       organization: 'NxtWave',
       date: '2025',
-      description: 'Certified in Scrum methodology and agile software development practices.',
+      description: 'Completed 30-day coding challenge focused on daily problem solving in JavaScript, algorithmic thinking, and coding consistency.',
       image: 'https://res.cloudinary.com/dgsmgz8zl/image/upload/v1748233005/30_Days_of_Code_Challenge_x1xq1l.png'
     }
   ];
+
 
   return (
     <section id="certificates" className="certificates-section">

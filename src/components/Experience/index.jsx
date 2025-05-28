@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-  faBriefcase, 
-  faCalendarAlt, 
-  faMapMarkerAlt, 
-  faChevronDown, 
+import {
+  faBriefcase,
+  faCalendarAlt,
+  faMapMarkerAlt,
+  faChevronDown,
   faChevronUp,
   faExternalLinkAlt,
   faDownload
@@ -16,7 +16,7 @@ const Experience = () => {
   const [expandedItems, setExpandedItems] = useState({});
   const [isIntersecting, setIsIntersecting] = useState({});
   const experienceRefs = useRef([]);
-  
+
   // Function to handle resume download
   const handleDownloadResume = () => {
     // Create a link element
@@ -32,37 +32,35 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      company: "Tech Innovators Inc.",
-      position: "Senior Full Stack Developer",
-      period: "Jan 2023 - Present",
-      location: "Remote",
-      website: "https://example.com",
-      description: "Leading the development of enterprise-level web applications using React, Node.js, and MongoDB. Implementing modern UI/UX designs and ensuring responsive behavior across all devices.",
+      company: "T.I.M.E. Kids Pvt. Ltd.",
+      position: "Assistant Manager",
+      period: "Mar 2024 - Jan 2025",
+      location: "On-site",
+      website: "https://www.timekidspreschools.in",
+      description: "Contributed to improving web platforms for parents and teachers, with performance and accessibility enhancements using the MERN stack.",
       responsibilities: [
-        "Architected and implemented scalable frontend solutions using React and Context API",
-        "Developed RESTful APIs using Node.js and Express",
-        "Implemented CI/CD pipelines for automated testing and deployment",
-        "Mentored junior developers and conducted code reviews",
-        "Optimized application performance and reduced load times by 40%"
+        "Assisted in developing teacher and parent portals, reducing load times by 20% and boosting engagement by 15%",
+        "Supported MERN stack integration into the LMS, increasing online course accessibility by 10%",
+        "Collaborated on agile projects to help maintain 98% uptime and achieve a 25% reduction in reported bugs",
+        "Provided first-level technical support and data analysis, enhancing user satisfaction by 20%"
       ],
-      technologies: ["React", "Node.js", "Express", "MongoDB", "AWS", "Docker", "CI/CD"]
+      technologies: ["Power BI", "React", "Node.js", "Express", "MongoDB", "Agile", "Data Analysis"]
     },
     {
       id: 2,
-      company: "Digital Solutions Ltd.",
-      position: "Frontend Developer",
-      period: "Mar 2021 - Dec 2022",
-      location: "Hybrid",
-      website: "https://example.com",
-      description: "Worked on developing and maintaining multiple client-facing web applications. Focused on creating responsive, accessible, and performant user interfaces.",
+      company: "T.I.M.E.",
+      position: "Management Trainee",
+      period: "Jan 2023 - Feb 2024",
+      location: "On-site",
+      website: "https://www.time4education.com",
+      description: "Worked across various departments to understand the organization’s internal operations and supported multiple process improvement initiatives.",
       responsibilities: [
-        "Built responsive web applications using React and Redux",
-        "Collaborated with designers to implement pixel-perfect UI components",
-        "Integrated third-party APIs and services",
-        "Implemented unit and integration tests using Jest and React Testing Library",
-        "Participated in agile development processes and sprint planning"
+        "Gained a comprehensive understanding of business operations through interdepartmental collaboration",
+        "Worked on internal dashboards and reports to track KPIs and operational metrics",
+        "Assisted in planning and executing brand marketing initiatives across digital and offline channels",
+        "Contributed to improving CRM workflows and lead nurturing strategies using marketing automation tools",
       ],
-      technologies: ["React", "Redux", "JavaScript", "HTML5", "CSS3", "SASS", "Jest"]
+      technologies: ["Business Operations", "Process Management", "Google Analytics", "Microsoft Excel", "Excel/Google Sheets", "CRM Tools", "Power BI"]
     },
     {
       id: 3,
@@ -70,7 +68,7 @@ const Experience = () => {
       position: "Junior Web Developer",
       period: "Jun 2020 - Feb 2021",
       location: "On-site",
-      website: "https://example.com",
+      website: "https://wtss.co.in/",
       description: "Started as an intern and quickly progressed to a junior developer role. Worked on frontend development tasks and gained experience with modern web technologies.",
       responsibilities: [
         "Developed and maintained company website using HTML, CSS, and JavaScript",
@@ -79,7 +77,7 @@ const Experience = () => {
         "Created responsive email templates",
         "Participated in code reviews and team meetings"
       ],
-      technologies: ["HTML5", "CSS3", "JavaScript", "jQuery", "Bootstrap", "Git"]
+      technologies: ["HTML5", "CSS3", "JavaScript", "React", "Bootstrap", "Git"]
     }
   ];
 
@@ -111,7 +109,7 @@ const Experience = () => {
     };
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
-    
+
     experienceRefs.current.forEach(ref => {
       if (ref) observer.observe(ref);
     });
@@ -132,12 +130,12 @@ const Experience = () => {
     <div className="experience-page">
       <div className="container">
         <h1 className="section-title">Professional Experience</h1>
-        
+
         <div className="experience-content">
           {/* Timeline View */}
           <div className="experience-timeline">
             {experiences.map((exp, index) => (
-              <div 
+              <div
                 key={exp.id}
                 ref={el => experienceRefs.current[index] = el}
                 data-id={exp.id}
@@ -165,10 +163,10 @@ const Experience = () => {
                       <FontAwesomeIcon icon={expandedItems[exp.id] ? faChevronUp : faChevronDown} />
                     </div>
                   </div>
-                  
+
                   <div className={`timeline-details ${expandedItems[exp.id] ? 'show' : ''}`}>
                     <p className="timeline-description">{exp.description}</p>
-                    
+
                     <div className="timeline-responsibilities">
                       <h5>Key Responsibilities:</h5>
                       <ul>
@@ -177,7 +175,7 @@ const Experience = () => {
                         ))}
                       </ul>
                     </div>
-                    
+
                     <div className="timeline-technologies">
                       <h5>Technologies Used:</h5>
                       <div className="tech-tags">
@@ -186,7 +184,7 @@ const Experience = () => {
                         ))}
                       </div>
                     </div>
-                    
+
                     {exp.website && (
                       <a href={exp.website} target="_blank" rel="noopener noreferrer" className="company-link">
                         Visit Company <FontAwesomeIcon icon={faExternalLinkAlt} />
@@ -197,7 +195,7 @@ const Experience = () => {
               </div>
             ))}
           </div>
-          
+
           {/* Experience Stats */}
           <div className="experience-stats">
             <div className="stat-card">
@@ -209,12 +207,12 @@ const Experience = () => {
               <div className="stat-label">Years</div>
             </div>
             <div className="stat-card">
-              <div className="stat-number">15+</div>
+              <div className="stat-number">40+</div>
               <div className="stat-label">Projects</div>
             </div>
           </div>
         </div>
-        
+
         {/* Call to Action */}
         <div className="experience-cta">
           <p>Interested in my professional background?</p>
