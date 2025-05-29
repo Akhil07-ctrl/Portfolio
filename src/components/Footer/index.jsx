@@ -1,4 +1,4 @@
-import { FaLinkedin, FaGithub, FaEnvelope, FaTwitter } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope, FaTwitter, FaHackerrank } from 'react-icons/fa';
 
 import './index.css';
 
@@ -43,6 +43,14 @@ const Footer = () => {
               className="footer-icon"
             >
               <FaEnvelope />
+            </a>
+            <a
+              href="https://www.hackerrank.com/profile/akhilkundena"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-icon"
+            >
+              <FaHackerrank />
             </a>
           </div>
         </div>

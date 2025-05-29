@@ -166,6 +166,7 @@ body.dark-mode .download-resume-btn:active {
     opacity: 0;
     transform: translateX(30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -178,31 +179,31 @@ body.dark-mode .download-resume-btn:active {
     font-size: 0.9rem;
     padding: 8px 16px;
   }
-  
+
   .resume-content {
     padding: 15px;
   }
-  
+
   .resume-main {
     padding: 20px;
   }
-  
+
   .resume-section-item {
     margin-bottom: 30px;
   }
-  
+
   .section-header h3 {
     font-size: 1.3rem;
   }
-  
+
   .section-icon {
     font-size: 1.1rem;
   }
-  
+
   .project-item h4 {
     font-size: 1.1rem;
   }
-  
+
   .project-period {
     font-size: 0.85rem;
   }
@@ -213,6 +214,7 @@ body.dark-mode .download-resume-btn:active {
   .resume-section-item h3 {
     font-size: 1.1rem;
   }
+
   .resume-header {
     flex-direction: column;
     align-items: center;

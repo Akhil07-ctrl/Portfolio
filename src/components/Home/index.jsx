@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faTwitter, faHackerrank } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faArrowRight, faCode, faServer, faMobileScreen, faDatabase, faDownload } from '@fortawesome/free-solid-svg-icons';
 
 import "./index.css";
@@ -16,7 +16,17 @@ const Home = () => {
   const [isNxtTrendzExpanded, setIsNxtTrendzExpanded] = useState(false);
   const [isLoanManagerApplicationExpanded, setIsLoanManagerApplicationExpanded] = useState(false);
   const [isMiniGamesExpanded, setIsMiniGamesExpanded] = useState(false);
-  
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [formErrors, setFormErrors] = useState({});
+
   // Function to handle resume download
   const handleDownloadResume = () => {
     // Create a link element
@@ -26,6 +36,52 @@ const Home = () => {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+
+    // Validate form before submission
+    if (!validateForm()) {
+      // If validation fails, don't submit
+      return;
+    }
+
+    // Set loading state to true
+    setIsSubmitting(true);
+    setSuccess(false);
+    setError('');
+
+    try {
+      const data = new FormData(form);
+      const response = await fetch("https://formspree.io/f/manorvrd", {
+        method: "POST",
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setSuccess(true);
+        // Reset form and form data
+        form.reset();
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        const result = await response.json();
+        setError(result?.errors?.[0]?.message || "Something went wrong.");
+      }
+    } catch (err) {
+      setError("Network error. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const toggleNxtTrendzReadMore = () => {
@@ -38,6 +94,55 @@ const Home = () => {
 
   const toggleMiniGamesReadMore = () => {
     setIsMiniGamesExpanded(!isMiniGamesExpanded);
+  }
+
+  // Handle form input changes
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+
+    // Clear error for this field when user starts typing
+    if (formErrors[name]) {
+      setFormErrors({
+        ...formErrors,
+        [name]: ''
+      });
+    }
+  }
+
+  // Validate form data
+  const validateForm = () => {
+    const errors = {};
+
+    // Name validation
+    if (!formData.name.trim()) {
+      errors.name = 'Name is required';
+    }
+
+    // Email validation
+    if (!formData.email.trim()) {
+      errors.email = 'Email is required';
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)) {
+      errors.email = 'Invalid email address';
+    }
+
+    // Subject validation
+    if (!formData.subject.trim()) {
+      errors.subject = 'Subject is required';
+    }
+
+    // Message validation
+    if (!formData.message.trim()) {
+      errors.message = 'Message is required';
+    } else if (formData.message.trim().length < 10) {
+      errors.message = 'Message should be at least 10 characters';
+    }
+
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0;
   }
 
 
@@ -80,6 +185,9 @@ const Home = () => {
               </a>
               <a href="mailto:akhilkundena@gmail.com" target="_blank" rel="noopener noreferrer" className="social-icon">
                 <FontAwesomeIcon icon={faEnvelope} />
+              </a>
+              <a href="https://www.hackerrank.com/profile/akhilkundena" target="_blank" rel="noopener noreferrer" className="social-icon">
+                <FontAwesomeIcon icon={faHackerrank} />
               </a>
 
             </div>
@@ -266,24 +374,70 @@ const Home = () => {
               </div>
             </div>
             <div className="contact-form-container">
-              <form className="contact-form">
+              <form className="contact-form" onSubmit={handleSubmit}>
                 <div className="form-group">
                   <label htmlFor="name">Name</label>
-                  <input type="text" id="name" name="name" placeholder="Your name" required />
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Your name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  {formErrors.name && <p className="error-message">{formErrors.name}</p>}
                 </div>
                 <div className="form-group">
                   <label htmlFor="email">Email</label>
-                  <input type="email" id="email" name="email" placeholder="Your email" required />
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Your email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  {formErrors.email && <p className="error-message">{formErrors.email}</p>}
                 </div>
                 <div className="form-group">
                   <label htmlFor="subject">Subject</label>
-                  <input type="text" id="subject" name="subject" placeholder="Subject" required />
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    placeholder="Subject"
+                    value={formData.subject}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  {formErrors.subject && <p className="error-message">{formErrors.subject}</p>}
                 </div>
                 <div className="form-group">
                   <label htmlFor="message">Message</label>
-                  <textarea id="message" name="message" rows="5" placeholder="Your message" required></textarea>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    placeholder="Your message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                  ></textarea>
+                  {formErrors.message && <p className="error-message">{formErrors.message}</p>}
                 </div>
-                <button type="submit" className="submit-button">Send Message</button>
+                <button
+                  type="submit"
+                  className="submit-button"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                </button>
+                {success && (
+                  <p className="success-message">Message sent successfully! I'll get back to you soon.</p>
+                )}
+                {error && <p className="error-message">{error}</p>}
               </form>
             </div>
           </div>
