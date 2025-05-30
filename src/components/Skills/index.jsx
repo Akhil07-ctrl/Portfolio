@@ -1,4 +1,3 @@
-
 import './index.css';
 
 const Skills = () => {
@@ -83,7 +82,6 @@ const Skills = () => {
                   <i className={`devicon-${skill.icon}-plain colored`} />
                 )}
               </div>
-
               <h3>{skill.name}</h3>
               <p className="skill-level">{skill.level}</p>
               <div className="skill-progress">

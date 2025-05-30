@@ -1,11 +1,142 @@
-/* Additional mobile styles for the header */
-@media (max-width: 768px) {
-  /* Show/hide appropriate elements for mobile */
+/* Additional mobile and tablet styles for the header */
+
+/* Medium tablets (iPad, etc.) */
+@media (max-width: 991px) {
+  /* Reduce spacing between nav items */
+  .nav-links {
+    gap: 0.8rem;
+  }
+  
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 0.4rem 0;
+  }
+  
+  .logo h1 {
+    font-size: 1.6rem;
+  }
+}
+
+/* iPad Pro and similar large tablets (portrait) */
+@media (max-width: 834px) {
+  /* Show hamburger menu for iPad Pro */
   .mobile-only {
     display: flex !important;
   }
-  
+
   .desktop-only {
     display: none !important;
+  }
+  
+  .mobile-menu {
+    display: block !important;
+  }
+  
+  /* Specific styles for tablet devices */
+  .header.tablet .mobile-menu {
+    font-size: 1.4rem;
+  }
+  
+  .header.tablet .mobile-menu.visible {
+    opacity: 1;
+  }
+  
+  .nav-content {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+
+  .nav-content.active {
+    transform: translateX(0);
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem 0;
+  }
+}
+
+/* Asus Zenbook Fold (folded mode) and smaller devices */
+@media (max-width: 768px) {
+  .header {
+    padding: 0.8rem 0;
+  }
+  
+  .logo h1 {
+    font-size: 1.5rem;
+  }
+  
+  /* Specific styles for foldable devices */
+  .header.foldable .nav {
+    padding: 0 5px;
+  }
+  
+  .header.foldable .mobile-controls {
+    gap: 0.8rem;
+  }
+  
+  .header.foldable .mobile-menu {
+    font-size: 1.3rem;
+  }
+  
+  /* Adjust the mobile menu for foldable devices */
+  .header.foldable .nav-content {
+    top: 65px;
+    height: calc(100vh - 65px);
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .logo h1 {
+    font-size: 1.3rem;
+  }
+  
+  .nav-link {
+    font-size: 1rem;
+    padding: 0.7rem 0;
+  }
+  
+  .nav-content {
+    padding: 1.5rem;
+  }
+}
+
+/* Foldable devices in folded state (narrow view) */
+@media (max-width: 320px) {
+  .logo h1 {
+    font-size: 1.2rem;
+  }
+  
+  .mobile-controls {
+    gap: 0.5rem;
+  }
+  
+  .theme-toggle, .mobile-menu {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
   }
 }

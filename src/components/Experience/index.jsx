@@ -10,6 +10,7 @@ import {
   faExternalLinkAlt,
   faDownload
 } from '@fortawesome/free-solid-svg-icons';
+
 import './index.css';
 
 const Experience = () => {

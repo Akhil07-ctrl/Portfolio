@@ -33,8 +33,8 @@
 }
 
 .certificate-header img {
-  max-width: auto; 
-  height: auto; /* Adjust the height as needed */
+  max-width: auto;
+  height: auto;
 }
 
 .certificate-info {
@@ -90,6 +90,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

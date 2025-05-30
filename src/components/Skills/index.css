@@ -102,21 +102,21 @@
   }
 
   .custom-icon {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  vertical-align: middle;
-}
-  
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    vertical-align: middle;
+  }
+
   .skills-grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
   }
-  
+
   .skill-card {
     padding: 20px;
   }
-  
+
   .skill-icon i {
     font-size: 3rem;
   }
@@ -126,7 +126,7 @@
   .section-title {
     font-size: 2rem;
   }
-  
+
   .skills-grid {
     padding: 10px;
   }
@@ -138,6 +138,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

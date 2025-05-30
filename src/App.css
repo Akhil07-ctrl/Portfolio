@@ -76,7 +76,8 @@ img {
   height: auto;
 }
 
-button, .btn {
+button,
+.btn {
   cursor: pointer;
   font-family: 'Poppins', sans-serif;
   transition: var(--transition);
@@ -139,8 +140,13 @@ button, .btn {
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideInUp {
@@ -148,6 +154,7 @@ button, .btn {
     transform: translateY(50px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -212,7 +219,7 @@ button, .btn {
   .section {
     padding: 60px 0;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
@@ -222,7 +229,7 @@ button, .btn {
   .section {
     padding: 40px 0;
   }
-  
+
   .section-title {
     font-size: 1.8rem;
   }

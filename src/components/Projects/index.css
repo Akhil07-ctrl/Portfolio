@@ -1,0 +1,124 @@
+/* Projects Page Styles */
+.projects-page {
+  padding: 120px 0 80px;
+  background-color: var(--background);
+  min-height: 100vh;
+}
+
+.projects-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.projects-title {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.projects-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+}
+
+.projects-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  max-width: 700px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .projects-page {
+    padding: 100px 0 60px;
+  }
+  
+  .projects-title {
+    font-size: 2rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+}
+
+/* Call to Action Section */
+.projects-cta {
+  margin-top: 60px;
+  text-align: center;
+  padding: 40px;
+  background-color: var(--background-light);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+.cta-text {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  margin-bottom: 25px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cta-icon {
+  margin-right: 8px;
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+
+/* Responsive styles */
+@media (max-width: 480px) {
+  .projects-page {
+    padding: 80px 0 40px;
+  }
+  
+  .projects-title {
+    font-size: 1.8rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .projects-cta {
+    padding: 30px 20px;
+    margin-top: 40px;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .cta-button {
+    width: 100%;
+  }
+}

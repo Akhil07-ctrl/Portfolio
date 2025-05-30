@@ -1,4 +1,4 @@
-import { FaLinkedin, FaGithub, FaEnvelope, FaTwitter, FaHackerrank } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope, FaTwitter } from 'react-icons/fa';
 
 import './index.css';
 
@@ -44,14 +44,6 @@ const Footer = () => {
             >
               <FaEnvelope />
             </a>
-            <a
-              href="https://www.hackerrank.com/profile/akhilkundena"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-icon"
-            >
-              <FaHackerrank />
-            </a>
           </div>
         </div>
 
@@ -60,8 +52,8 @@ const Footer = () => {
             <p>&copy; {new Date().getFullYear()} Kundena Akhil. All rights reserved.</p>
           </div>
           <div className="footer-bottom-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
+            <a href="https://yourdomain.com/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+            <a href="https://yourdomain.com/terms-and-conditions" target="_blank" rel="noopener noreferrer">Terms of Service</a>
           </div>
         </div>
       </div>

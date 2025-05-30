@@ -9,6 +9,8 @@ import './mobile-styles.css';
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
+  const [isFoldable, setIsFoldable] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(() => {
     // Check localStorage first
     const stored = localStorage.getItem('darkMode');
@@ -46,6 +48,28 @@ const Header = () => {
 
     mediaQuery.addEventListener('change', handleChange);
     return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
+
+  // Check for tablet and foldable device screen sizes
+  useEffect(() => {
+    const checkScreenSize = () => {
+      // iPad Pro and similar tablets (834px width in portrait mode)
+      setIsTablet(window.innerWidth <= 834);
+      
+      // Asus Zenbook Fold in folded mode and similar foldable devices
+      setIsFoldable(window.innerWidth <= 768);
+    };
+    
+    // Initial check
+    checkScreenSize();
+    
+    // Add event listener for window resize
+    window.addEventListener('resize', checkScreenSize);
+    
+    // Cleanup
+    return () => {
+      window.removeEventListener('resize', checkScreenSize);
+    };
   }, []);
 
   useEffect(() => {
@@ -89,14 +113,16 @@ const Header = () => {
   };
 
   return (
-    <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
+    <header className={`header ${isScrolled ? 'scrolled' : ''} ${isTablet ? 'tablet' : ''} ${isFoldable ? 'foldable' : ''}`}>
       <div className="container">
         <nav className="nav">
+          {/* Logo */}
           <Link to="/" className="logo" onClick={closeMobileMenu}>
             <h1>Kundena<span>Akhil</span></h1>
           </Link>
 
           <div className={`nav-content ${isMobileMenuOpen ? 'active' : ''}`}>
+            {/* Navigation links */}
             <ul className="nav-links">
               <li>
                 <Link
@@ -145,6 +171,15 @@ const Header = () => {
               </li>
               <li>
                 <Link
+                  to="/projects"
+                  className={`nav-link ${isActive('/projects') ? 'active' : ''}`}
+                  onClick={closeMobileMenu}
+                >
+                  Projects
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/resume"
                   className={`nav-link ${isActive('/resume') ? 'active' : ''}`}
                   onClick={closeMobileMenu}
@@ -158,6 +193,7 @@ const Header = () => {
             <div className="theme-toggle desktop-only" onClick={toggleDarkMode} aria-label="Toggle dark mode">
               <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} />
             </div>
+
           </div>
 
           {/* Theme toggle for mobile view - positioned left of hamburger */}
@@ -166,7 +202,12 @@ const Header = () => {
               <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} />
             </div>
 
-            <div className="mobile-menu" onClick={toggleMobileMenu} aria-label="Toggle mobile menu">
+            {/* Show hamburger menu for tablet and foldable devices */}
+            <div 
+              className={`mobile-menu ${isTablet ? 'visible' : ''}`} 
+              onClick={toggleMobileMenu} 
+              aria-label="Toggle mobile menu"
+            >
               <FontAwesomeIcon icon={isMobileMenuOpen ? faXmark : faBars} />
             </div>
           </div>

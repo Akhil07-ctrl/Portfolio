@@ -4,18 +4,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faTwitter, faHackerrank } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faArrowRight, faCode, faServer, faMobileScreen, faDatabase, faDownload } from '@fortawesome/free-solid-svg-icons';
 
+import ProjectCard from '../ProjectCard';
+import featuredProjectsData from '../../data/featuredProjects';
+
 import "./index.css";
 
-const description = {
-  nxtTrendz: "This project is a React-based e-commerce application that simulates an Amazon-like store. It features a login page, product listing, detailed product views, a shopping cart with add/update/remove functionalities, and a payment page. Protected routes ensure that only authenticated users access and uses React's Context API for cart state management.",
-  loanManagerApplication: "The Loan Manager is a comprehensive web application built with React that facilitates loan management between users and administrators. The platform features a secure authentication system, allowing users to apply for loans while administrators can manage loan applications through a sophisticated dashboard that displays real-time statistics.",
-  miniGames: "Mini Games is a React-based web application featuring four engaging browser games: Emoji Game, Memory Matrix, Rock Paper Scissors, and Card-Flip Memory Game. Built with modern React (v19) and Vite, this project offers a clean, responsive interface for users to select and play different mini-games."
-}
-
 const Home = () => {
-  const [isNxtTrendzExpanded, setIsNxtTrendzExpanded] = useState(false);
-  const [isLoanManagerApplicationExpanded, setIsLoanManagerApplicationExpanded] = useState(false);
-  const [isMiniGamesExpanded, setIsMiniGamesExpanded] = useState(false);
+  // State for form handling
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -83,18 +78,6 @@ const Home = () => {
       setIsSubmitting(false);
     }
   };
-
-  const toggleNxtTrendzReadMore = () => {
-    setIsNxtTrendzExpanded(!isNxtTrendzExpanded);
-  }
-
-  const toggleLoanManagerApplicationReadMore = () => {
-    setIsLoanManagerApplicationExpanded(!isLoanManagerApplicationExpanded);
-  }
-
-  const toggleMiniGamesReadMore = () => {
-    setIsMiniGamesExpanded(!isMiniGamesExpanded);
-  }
 
   // Handle form input changes
   const handleInputChange = (e) => {
@@ -266,86 +249,12 @@ const Home = () => {
         <div className="container">
           <h2 className="section-title">Featured Projects</h2>
           <div className="projects-grid">
-            {/* Project 1 */}
-            <div className="project-card">
-              <div className="project-image">
-                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80" alt="E-commerce Platform" />
-              </div>
-              <div className="project-content">
-                <h3 className="project-title">Nxt Trendz</h3>
-                <p className="project-description">
-                  {isNxtTrendzExpanded ? description.nxtTrendz : `${description.nxtTrendz.substring(0, 150)}...`}
-                  <button onClick={toggleNxtTrendzReadMore} className="read-more-btn">
-                    {isNxtTrendzExpanded ? " Read Less" : " Read More"}
-                  </button>
-                </p>
-                <div className="project-tech">
-                  <span>React + Vite</span>
-                  <span>Context API</span>
-                  <span>React Router</span>
-                  <span>CSS</span>
-                </div>
-                <div className="project-links">
-                  <a href="https://github.com/Akhil07-ctrl/Amazon-Clone.git" target="_blank" rel="noopener noreferrer" className="project-link">View Code</a>
-                  <a href="https://akhil07-ctrl.github.io/Amazon-Clone/login" target="_blank" rel="noopener noreferrer" className="project-link">Live Demo</a>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 2 */}
-            <div className="project-card">
-              <div className="project-image">
-                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Task Management App" />
-              </div>
-              <div className="project-content">
-                <h3 className="project-title">Loan Manager Application</h3>
-                <p className="project-description">
-                  {isLoanManagerApplicationExpanded ? description.loanManagerApplication : `${description.loanManagerApplication.substring(0, 150)}...`}
-                  <button onClick={toggleLoanManagerApplicationReadMore} className="read-more-btn">
-                    {isLoanManagerApplicationExpanded ? " Read Less" : " Read More"}
-                  </button>
-                </p>
-                <div className="project-tech">
-                  <span>Node.js</span>
-                  <span>Express.js</span>
-                  <span>MongoDB</span>
-                  <span>React + Vite</span>
-                </div>
-                <div className="project-links">
-                  <a href="https://github.com/Akhil07-ctrl/Loan-Manager-Application.git" target="_blank" rel="noopener noreferrer" className="project-link">View Code</a>
-                  <a href="https://loan-manager-application.vercel.app/" target="_blank" rel="noopener noreferrer" className="project-link">Live Demo</a>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 3 */}
-            <div className="project-card">
-              <div className="project-image">
-                <img src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1780&q=80" alt="Fitness Tracker" />
-              </div>
-              <div className="project-content">
-                <h3 className="project-title">Mini Games</h3>
-                <p className="project-description">
-                  {isMiniGamesExpanded ? description.miniGames : `${description.miniGames.substring(0, 150)}...`}
-                  <button onClick={toggleMiniGamesReadMore} className="read-more-btn">
-                    {isMiniGamesExpanded ? " Read Less" : " Read More"}
-                  </button>
-                </p>
-                <div className="project-tech">
-                  <span>React + Vite</span>
-                  <span>CSS</span>
-                  <span>React Icons</span>
-                  <span>React Modal</span>
-                </div>
-                <div className="project-links">
-                  <a href="https://github.com/Akhil07-ctrl/Mini-Games.git" target="_blank" rel="noopener noreferrer" className="project-link">View Code</a>
-                  <a href="https://mini-games-inky.vercel.app/" target="_blank" rel="noopener noreferrer" className="project-link">Live Demo</a>
-                </div>
-              </div>
-            </div>
+            {featuredProjectsData.map(project => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
           </div>
-          <div className="projects-cta">
-            <a href="https://github.com/Akhil07-ctrl" target="_blank" rel="noopener noreferrer" className="cta-button primary">View All Projects</a>
+          <div className="home-projects-cta">
+            <Link to="/projects" className="cta-button primary">View All Projects</Link>
           </div>
         </div>
       </section>

@@ -51,6 +51,7 @@
   line-height: 1.1;
   background: linear-gradient(135deg, var(--text-color) 0%, var(--secondary-color) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: fadeInUp 0.8s ease forwards;
 }
@@ -412,103 +413,7 @@ body.dark-mode .cta-button.download:active {
   margin-top: 40px;
 }
 
-.project-card {
-  background: var(--white);
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-}
-
-.project-image {
-  height: 200px;
-  overflow: hidden;
-}
-
-.project-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.project-card:hover .project-image img {
-  transform: scale(1.1);
-}
-
-.project-content {
-  padding: 25px;
-}
-
-.project-title {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  color: var(--text-color);
-}
-
-.project-description {
-  color: var(--text-light);
-  margin-bottom: 15px;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.project-tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.project-tech span {
-  background: var(--background-light);
-  color: var(--primary-color);
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
-.project-links {
-  display: flex;
-  gap: 15px;
-}
-
-.read-more-btn {
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.9rem;
-  color: var(--primary-color);
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-}
-
-.read-more-btn:hover {
-  color: var(--primary-light);
-  text-decoration: underline;
-}
-
-.project-link {
-  color: var(--primary-color);
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-}
-
-.project-link:hover {
-  color: var(--primary-light);
-  text-decoration: underline;
-}
-
-.projects-cta {
+.home-projects-cta {
   text-align: center;
   margin-top: 50px;
 }
@@ -943,6 +848,7 @@ body.dark-mode .hero-section {
 body.dark-mode .hero-title {
   background: linear-gradient(135deg, var(--text-color) 0%, #a0a0a0 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
